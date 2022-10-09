@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "green-shop-2e695": {
+      "hosting": {
+        "green-shop": [
+          "green-shop-2e695"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "green-shop-2e695"
+  }
+}

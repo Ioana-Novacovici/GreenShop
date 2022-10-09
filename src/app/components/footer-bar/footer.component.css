@@ -1,0 +1,40 @@
+.footer{
+  position: fixed;
+  bottom: 0;
+  left:0;
+  right:0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: forestgreen;
+  color: white;
+  font-weight: 200;
+
+}
+
+span{
+  margin-left: 70px;
+  margin-right: 20px;
+}
+#end{
+  margin-left: 10px;
+}
+.spacer {
+  flex: 1;
+}
+
+.footer #twitter-logo {
+  height: 40px;
+  margin: 0 8px;
+}
+
+.footer #youtube-logo {
+  height: 40px;
+  margin: 0 16px;
+}
+
+.footer #twitter-logo:hover,
+.footer #youtube-logo:hover {
+  opacity: 0.8;
+}
+

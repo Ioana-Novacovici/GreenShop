@@ -1,0 +1,70 @@
+
+.toolbar{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  background-color: forestgreen;
+  color: white;
+  font-weight: 600;
+  font-size: 2em;
+  height: 70px;
+}
+
+.spacer {
+  flex: 1;
+}
+.toolbar img {
+  margin: 0 16px;
+
+}
+
+.toolbar #twitter-logo {
+  height: 40px;
+  margin: 0 8px;
+}
+
+.toolbar #youtube-logo {
+  height: 40px;
+  margin: 0 16px;
+}
+
+.toolbar #twitter-logo:hover,
+.toolbar #youtube-logo:hover {
+  opacity: 0.8;
+}
+
+#dropdownBasic2, #dropdownBasic1{
+  color: white;
+  border-color: white;
+
+}
+
+#dropdownBasic2:hover, #dropdownBasic1:hover{
+  background-color: forestgreen;
+  border-color: white;
+  --bs-btn-focus-shadow: white;
+  --bs-btn-active-shadow:white;
+}
+.dropdown-menu{
+  --bs-dropdown-link-active-bg: forestgreen;
+}
+
+.btn-outline-primary {
+  --bs-btn-color: forestgreen;
+  --bs-btn-border-color: forestgreen;
+  --bs-btn-hover-bg: forestgreen;
+  --bs-btn-hover-border-color: forestgreen;
+  --bs-btn-active-bg: forestgreen;
+  --bs-btn-active-border-color: forestgreen;
+  --bs-btn-disabled-color: forestgreen;
+  --bs-btn-disabled-border-color: forestgreen;
+}
+
+dropdownBasic2:focus{
+  border-color: black;
+}
+
+
