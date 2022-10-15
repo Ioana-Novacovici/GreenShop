@@ -17,24 +17,32 @@ span{
   margin-right: 20px;
 }
 #end{
-  margin-left: 10px;
+  margin-left: 50px;
 }
 .spacer {
   flex: 1;
 }
 
-.footer #twitter-logo {
-  height: 40px;
-  margin: 0 8px;
-}
-
 .footer #youtube-logo {
-  height: 40px;
   margin: 0 16px;
 }
 
-.footer #twitter-logo:hover,
-.footer #youtube-logo:hover {
+.footer #whatsapp-logo:hover,
+.footer #youtube-logo:hover,
+.footer #instagram-logo:hover{
   opacity: 0.8;
 }
+
+/*footer {*/
+/*  margin-top: 8px;*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  line-height: 20px;*/
+/*}*/
+
+/*footer a {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*}*/
+
 

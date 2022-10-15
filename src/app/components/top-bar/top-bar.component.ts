@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AngularFireAuth} from "@angular/fire/compat/auth";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-top-bar',
@@ -6,7 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./top-bar.component.css']
 })
 export class TopBarComponent implements OnInit {
-  constructor() { }
+
+  constructor(private auth:AuthService) {
+
+  }
+
+  logout(){
+    this.auth.logout();
+  }
+
+  isLogedIn(): boolean{
+    return this.auth.isLoggdeIn();
+  }
 
   ngOnInit(): void {
   }
