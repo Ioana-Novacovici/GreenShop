@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { FooterComponent } from './components/footer-bar/footer.component';
-import {NgbDropdown, NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import {RouterModule} from "@angular/router";
@@ -15,6 +15,7 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import {FormsModule} from "@angular/forms";
+import { StoreComponent } from './components/store/store.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {FormsModule} from "@angular/forms";
     TopBarComponent,
     FooterComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    StoreComponent
   ],
   imports: [
     BrowserModule,

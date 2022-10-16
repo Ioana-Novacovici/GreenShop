@@ -1,0 +1,26 @@
+<p>store works!</p>
+<!--<div *ngFor="let item of itemsList">-->
+<!--  <p>{{item.category}}</p>-->
+<!--  <p>{{item.name}}</p>-->
+<!--  <p>{{item.quantity}}</p>-->
+<!--  <p>{{item.id}}</p>-->
+<!--  <p>{{item.price}}</p>-->
+<!--</div>-->
+
+
+<div *ngFor="let item of itemsList">
+  <div [ngSwitch]="item.category">
+    <div *ngSwitchCase="'fruits'">
+      <p>{{item.category}}</p>
+      <p>{{item.name}}</p>
+      <div class="card-image">
+        <img height="90px" [src]="item.image" alt="img">
+      </div>
+    </div>
+    <div *ngSwitchCase="'juices'">
+      <p>{{item.quantity}}</p>
+      <p>{{item.id}}</p>
+      <p>{{item.price}}</p>
+    </div>
+  </div>
+</div>

@@ -19,7 +19,7 @@
     <div class="col">
       <div ngbDropdown class="d-inline-block">
         <button type="button" class="btn btn-outline-secondary" id="dropdownBasic1" ngbDropdownToggle>My Account</button>
-        <div *ngIf="!isLogedIn(); else elseBlock" ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <div *ngIf="!isLoggedIn(); else elseBlock" ngbDropdownMenu aria-labelledby="dropdownBasic1">
           <button ngbDropdownItem routerLink="/login">Log In</button>
           <button ngbDropdownItem routerLink="/register">Register</button>
           <button ngbDropdownItem>Admin Panel</button>
