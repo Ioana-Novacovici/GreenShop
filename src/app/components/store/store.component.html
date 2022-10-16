@@ -1,4 +1,4 @@
-<p>store works!</p>
+
 <!--<div *ngFor="let item of itemsList">-->
 <!--  <p>{{item.category}}</p>-->
 <!--  <p>{{item.name}}</p>-->
@@ -8,19 +8,53 @@
 <!--</div>-->
 
 
-<div *ngFor="let item of itemsList">
-  <div [ngSwitch]="item.category">
-    <div *ngSwitchCase="'fruits'">
-      <p>{{item.category}}</p>
-      <p>{{item.name}}</p>
-      <div class="card-image">
-        <img height="90px" [src]="item.image" alt="img">
+<!--<div *ngFor="let item of itemsList">-->
+<!--  <div [ngSwitch]="item.category">-->
+<!--    <div *ngSwitchCase="'fruits'">-->
+<!--      <p>{{item.category}}</p>-->
+<!--      <p>{{item.name}}</p>-->
+<!--      <div class="card-image">-->
+<!--        <img height="90px" [src]="item.image" alt="img">-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div *ngSwitchCase="'juices'">-->
+<!--      <p>{{item.quantity}}</p>-->
+<!--      <p>{{item.id}}</p>-->
+<!--      <p>{{item.price}}</p>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-md-3">
+      <div class="list-group">
+        <a class="list-group-item list-group-item-action" (click)="selectButton(1)" [class.active]="isButtonSelected(1)" data-bs-toggle="list" [routerLink]="['/store', 'allCategories']">All Categories</a>
+        <a class="list-group-item list-group-item-action" (click)="selectButton(2)" [class.active]="isButtonSelected(2)" data-bs-toggle="list" [routerLink]="['/store', 'fruits']">Fruits</a>
+        <a class="list-group-item list-group-item-action" (click)="selectButton(3)" [class.active]="isButtonSelected(3)" data-bs-toggle="list" [routerLink]="['/store', 'vegetables']">Vegetables</a>
+        <a class="list-group-item list-group-item-action" (click)="selectButton(4)" [class.active]="isButtonSelected(4)" data-bs-toggle="list" [routerLink]="['/store', 'juices']">Juices</a>
+        <a class="list-group-item list-group-item-action" (click)="selectButton(5)" [class.active]="isButtonSelected(5)" data-bs-toggle="list" [routerLink]="['/store', 'salads']">Salads</a>
+        <a class="list-group-item list-group-item-action" (click)="selectButton(6)" [class.active]="isButtonSelected(6)" data-bs-toggle="list" [routerLink]="['/store', 'deserts']">Deserts</a>
       </div>
     </div>
-    <div *ngSwitchCase="'juices'">
-      <p>{{item.quantity}}</p>
-      <p>{{item.id}}</p>
-      <p>{{item.price}}</p>
+
+    <div class="col-md-1"></div>
+
+    <div class="col-md-8" *ngIf="isButtonSelected(1)">
+      <p>butonu unuu</p>
     </div>
+    <div class="col-md-8" *ngIf="isButtonSelected(2)">
+      <p>butonu doi</p>
+      <div class="input-group" >
+        <input type="number" value="1" class="form-control" style="text-align:center;" >
+      </div>
+
+    </div>
+
   </div>
 </div>
+
+
+

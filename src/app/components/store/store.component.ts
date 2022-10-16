@@ -10,8 +10,11 @@ import {ItemService} from "../../services/item.service";
 export class StoreComponent implements OnInit {
 
   itemsList : Item[] = [];
+  button : number;
 
-  constructor(private itemService : ItemService) {}
+  constructor(private itemService : ItemService) {
+    this.button = 1;
+  }
 
   ngOnInit(): void {
     this.getAllItems();
@@ -31,6 +34,14 @@ export class StoreComponent implements OnInit {
       alert('Error while fetching items data');
     })
 
+  }
+
+  public selectButton(currentButton: number) {
+    this.button = currentButton;
+  }
+
+  public isButtonSelected(currentButton: number): boolean {
+    return this.button === currentButton;
   }
 
 }

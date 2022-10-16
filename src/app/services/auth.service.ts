@@ -13,7 +13,7 @@ export class AuthService {
   login(email: string, password: string){
     this.fireauth.signInWithEmailAndPassword(email, password).then(() => {
       localStorage.setItem('token', 'true');
-      this.router.navigate(['/store']);
+      this.router.navigate(['/store/allCategories']);
       this.loggdeIn = true;
       console.log(this.loggdeIn);
     }, err =>{
@@ -37,7 +37,7 @@ export class AuthService {
   logout(){
     this.fireauth.signOut().then(() => {
       localStorage.removeItem('token');
-      this.router.navigate(['/store'])
+      this.router.navigate(['/store/allCategories'])
       this.loggdeIn = false;
       console.log(this.loggdeIn);
     }, err =>{
