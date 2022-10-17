@@ -15,6 +15,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import {FormsModule} from "@angular/forms";
 import { StoreComponent } from './components/store/store.component';
+import { ItemCardComponent } from './components/item-card/item-card.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { StoreComponent } from './components/store/store.component';
     FooterComponent,
     LoginComponent,
     RegisterComponent,
-    StoreComponent
+    StoreComponent,
+    ItemCardComponent
   ],
   imports: [
     BrowserModule,

@@ -1,31 +1,3 @@
-
-<!--<div *ngFor="let item of itemsList">-->
-<!--  <p>{{item.category}}</p>-->
-<!--  <p>{{item.name}}</p>-->
-<!--  <p>{{item.quantity}}</p>-->
-<!--  <p>{{item.id}}</p>-->
-<!--  <p>{{item.price}}</p>-->
-<!--</div>-->
-
-
-<!--<div *ngFor="let item of itemsList">-->
-<!--  <div [ngSwitch]="item.category">-->
-<!--    <div *ngSwitchCase="'fruits'">-->
-<!--      <p>{{item.category}}</p>-->
-<!--      <p>{{item.name}}</p>-->
-<!--      <div class="card-image">-->
-<!--        <img height="90px" [src]="item.image" alt="img">-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div *ngSwitchCase="'juices'">-->
-<!--      <p>{{item.quantity}}</p>-->
-<!--      <p>{{item.id}}</p>-->
-<!--      <p>{{item.price}}</p>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</div>-->
-
-
 <div class="container-fluid">
   <div class="row">
 
@@ -42,15 +14,27 @@
 
     <div class="col-md-1"></div>
 
-    <div class="col-md-8" *ngIf="isButtonSelected(1)">
-      <p>butonu unuu</p>
-    </div>
-    <div class="col-md-8" *ngIf="isButtonSelected(2)">
-      <p>butonu doi</p>
-      <div class="input-group" >
-        <input type="number" value="1" class="form-control" style="text-align:center;" >
+    <div class="col-md-8">
+      <div *ngFor="let item of itemsList">
+        <div  *ngIf="isButtonSelected(1)">
+          <app-item-card [item]="item"></app-item-card>
+        </div>
+        <div *ngIf="isButtonSelected(2) && item.category == 'fruits'">
+          <app-item-card [item]="item"></app-item-card>
+        </div>
+        <div *ngIf="isButtonSelected(3) && item.category == 'vegetables'">
+          <app-item-card [item]="item"></app-item-card>
+        </div>
+        <div *ngIf="isButtonSelected(4) && item.category == 'juices'">
+          <app-item-card [item]="item"></app-item-card>
+        </div>
+        <div *ngIf="isButtonSelected(5) && item.category == 'salads'">
+          <app-item-card [item]="item"></app-item-card>
+        </div>
+        <div *ngIf="isButtonSelected(6) && item.category == 'deserts'">
+          <app-item-card [item]="item"></app-item-card>
+        </div>
       </div>
-
     </div>
 
   </div>

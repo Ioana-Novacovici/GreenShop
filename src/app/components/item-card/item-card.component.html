@@ -1,0 +1,18 @@
+<div class="card" style="width: 30%;">
+  <img class="card-img-top" height="200px" [src] = "item?.image" alt="Item image">
+  <div class="card-body">
+    <h5 class="card-title">{{item?.name}}</h5>
+    <p class="card-text">{{item?.price | currency}}</p>
+    <a *ngIf="!this.isClicked; else elseTemplate" (click)="this.isClicked=true"  class="btn btn-success">Add to your shopping cart</a>
+    <ng-template #elseTemplate>
+      <div class="input-group">
+        <input type="number" min="1" max="100" class="form-control" style="text-align:center;" [(ngModel)]="quantitySelected" >
+      </div>
+    </ng-template>
+
+<!--    <ng-template #backToButton>-->
+<!--      <a *ngIf="!this.isClicked; else elseTemplate" (click)="this.isClicked=true"  class="btn btn-success">Add to your shopping cart</a>-->
+<!--    </ng-template>-->
+
+  </div>
+</div>

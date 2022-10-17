@@ -30,7 +30,7 @@ export class StoreComponent implements OnInit {
         return data;
       })
 
-    }, err => {
+    }, () => {
       alert('Error while fetching items data');
     })
 
