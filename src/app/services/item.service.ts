@@ -26,4 +26,10 @@ export class ItemService {
     this.deleteItem(item);
     this.addItem(item);
   }
+
+  updateQuantity(item: Item, quantity: number){
+    this.deleteItem(item);
+    item.quantity = quantity;
+    this.addItem(item);
+  }
 }

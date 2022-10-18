@@ -17,6 +17,7 @@ import {FormsModule} from "@angular/forms";
 import { StoreComponent } from './components/store/store.component';
 import { ItemCardComponent } from './components/item-card/item-card.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { ItemCardComponent } from './components/item-card/item-card.component';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
-    FormsModule
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
