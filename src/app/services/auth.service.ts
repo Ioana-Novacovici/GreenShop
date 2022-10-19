@@ -17,8 +17,7 @@ export class AuthService {
       localStorage.setItem('token', 'true');
       if(password == 'ioanaioana' && email == 'ioananov@yahoo.ro'){
         this.loggedInAsAdmin = true;
-        console.log("logged as admin")
-        // this.router.navigate(['/store/allCategories']);
+        this.router.navigate(['/shopView']);
       }
       else{
         this.router.navigate(['/store/allCategories']);

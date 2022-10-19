@@ -20,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatBadgeModule} from "@angular/material/badge";
 import {MatIconModule} from "@angular/material/icon";
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
+import { ShopViewComponent } from './components/shop-view/shop-view.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AdminLoginComponent } from './components/admin-login/admin-login.compon
     RegisterComponent,
     StoreComponent,
     ItemCardComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    ShopViewComponent
   ],
   imports: [
     BrowserModule,

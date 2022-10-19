@@ -9,7 +9,14 @@ import {Item} from "../../model/item";
 export class ItemCardComponent implements OnInit {
 
   @Input()
-  item : Item | undefined;
+  item : Item = {
+    id: '',
+    name: '',
+    price: 0,
+    category: '',
+    quantity: 0,
+    image: ''
+  };
   isClicked : boolean;
   quantitySelected : number;
 
