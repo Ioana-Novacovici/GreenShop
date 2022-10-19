@@ -28,7 +28,23 @@ export class ShopViewComponent implements OnInit {
   constructor(private itemService : ItemService) { }
 
   ngOnInit(): void {
-    this.itemService.getAllItems();
+    this.getAllItems();
+  }
+
+  getAllItems(){
+
+    this.itemService.getAllItems().subscribe(res => {
+
+      this.itemsList = res.map((e : any) => {
+        const data = e.payload.doc.data();
+        data.id = e.payload.doc.id;
+        return data;
+      })
+
+    }, () => {
+      alert('Error while fetching items data');
+    })
+
   }
 
   resetForm(){
