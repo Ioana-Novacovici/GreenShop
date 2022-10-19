@@ -9,7 +9,6 @@ import {AuthService} from "../../services/auth.service";
 export class TopBarComponent implements OnInit {
 
   constructor(private auth:AuthService) {
-
   }
 
   logout(){
@@ -17,7 +16,11 @@ export class TopBarComponent implements OnInit {
   }
 
   isLoggedIn(): boolean{
-    return this.auth.isLoggdeIn();
+    return this.auth.isLoggedIn();
+  }
+
+  isLoggedInAsAdmin() : boolean{
+    return this.auth.isLoggedInAsAdmin();
   }
 
   ngOnInit(): void {

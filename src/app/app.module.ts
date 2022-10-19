@@ -16,7 +16,10 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import {FormsModule} from "@angular/forms";
 import { StoreComponent } from './components/store/store.component';
 import { ItemCardComponent } from './components/item-card/item-card.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatBadgeModule} from "@angular/material/badge";
+import {MatIconModule} from "@angular/material/icon";
+import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import { ItemCardComponent } from './components/item-card/item-card.component';
     LoginComponent,
     RegisterComponent,
     StoreComponent,
-    ItemCardComponent
+    ItemCardComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +46,9 @@ import { ItemCardComponent } from './components/item-card/item-card.component';
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     FormsModule,
-
+    BrowserAnimationsModule,
+    MatBadgeModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
