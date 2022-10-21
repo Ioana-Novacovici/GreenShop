@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {Router} from "@angular/router";
+import {User} from "../model/user";
+import {AngularFirestore} from "@angular/fire/compat/firestore";
 
 @Injectable({
   providedIn: 'root'
@@ -8,11 +10,17 @@ import {Router} from "@angular/router";
 export class AuthService {
   private loggedIn = false;
   private loggedInAsAdmin = false;
-  constructor(private fireauth: AngularFireAuth, private router: Router) { }
+  usersList: User[] = [];
+  user: User={email:'', id:'', role: ''};
+
+  constructor(private fireauth: AngularFireAuth, private router: Router, private afs: AngularFirestore) { }
 
   //login method
   login(email: string, password: string){
-
+    this.user.id = this.afs.createId();
+    this.user.email = email;
+    this.user.role='client';
+    this.afs.collection('/Users').add(this.user);
     this.fireauth.signInWithEmailAndPassword(email, password).then(() => {
       localStorage.setItem('token', 'true');
       if(password == 'ioanaioana' && email == 'ioananov@yahoo.ro'){

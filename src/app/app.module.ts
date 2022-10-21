@@ -21,6 +21,9 @@ import { MatBadgeModule} from "@angular/material/badge";
 import {MatIconModule} from "@angular/material/icon";
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { ShopViewComponent } from './components/shop-view/shop-view.component';
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatTableModule} from "@angular/material/table";
+import { UsersListComponent } from './components/users-list/users-list.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,8 @@ import { ShopViewComponent } from './components/shop-view/shop-view.component';
     StoreComponent,
     ItemCardComponent,
     AdminLoginComponent,
-    ShopViewComponent
+    ShopViewComponent,
+    UsersListComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +54,9 @@ import { ShopViewComponent } from './components/shop-view/shop-view.component';
     FormsModule,
     BrowserAnimationsModule,
     MatBadgeModule,
-    MatIconModule
+    MatIconModule,
+    MatPaginatorModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

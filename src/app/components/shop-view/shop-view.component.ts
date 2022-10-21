@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ItemService} from "../../services/item.service";
 import {Item} from "../../model/item";
 
@@ -25,7 +25,8 @@ export class ShopViewComponent implements OnInit {
   quantity : number = 0;
   image : string = '';
 
-  constructor(private itemService : ItemService) { }
+  constructor(private itemService : ItemService) {
+  }
 
   ngOnInit(): void {
     this.getAllItems();
