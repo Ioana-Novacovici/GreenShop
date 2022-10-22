@@ -17,14 +17,9 @@ export class AuthService {
 
   //login method
   login(email: string, password: string){
-    this.user.id = this.afs.createId();
-    this.user.email = email;
-    this.user.role='client';
-    this.afs.collection('/Users').add(this.user);
     this.fireauth.signInWithEmailAndPassword(email, password).then(() => {
       localStorage.setItem('token', 'true');
-      if(password == 'ioanaioana' && email == 'ioananov@yahoo.ro'){
-        this.loggedInAsAdmin = true;
+      if(this.loggedInAsAdmin){
         this.router.navigate(['/shopView']);
       }
       else{
@@ -37,12 +32,20 @@ export class AuthService {
       alert(err.message);
       this.router.navigate(['/login'])
     })
+    this.user.id='';
+    this.user.email='';
+    this.user.role='';
   }
 
   //register method
   register(email: string, password: string){
+
     this.fireauth.createUserWithEmailAndPassword(email, password).then(() => {
       alert('Registration Succsefull!')
+      this.user.email = email;
+      this.user.role = 'client';
+      this.user.id = this.afs.createId();
+      this.afs.collection('/Users').add(this.user);
       this.router.navigate(['/login'])
     }, err =>{
       alert(err.message);
@@ -68,5 +71,9 @@ export class AuthService {
 
   isLoggedInAsAdmin(): boolean{
     return this.loggedInAsAdmin;
+  }
+
+  setLoggedInAsAdmin(value : boolean){
+    this.loggedInAsAdmin = value;
   }
 }

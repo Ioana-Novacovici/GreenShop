@@ -27,6 +27,12 @@ export class UsersListComponent implements OnInit {
 
   }
 
+  deleteUser(user: User){
+    if(window.confirm('Are you sure you want to delete user: ' + user.email + '?')){
+      this.userService.deleteUser(user);
+    }
+  }
+
 
   constructor(private userService: UserService) { }
 
