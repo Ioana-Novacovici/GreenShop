@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {AuthService} from "../../services/auth.service";
 
 @Component({
@@ -10,15 +9,18 @@ import {AuthService} from "../../services/auth.service";
 export class TopBarComponent implements OnInit {
 
   constructor(private auth:AuthService) {
-
   }
 
   logout(){
     this.auth.logout();
   }
 
-  isLogedIn(): boolean{
-    return this.auth.isLoggdeIn();
+  isLoggedIn(): boolean{
+    return this.auth.isLoggedIn();
+  }
+
+  isLoggedInAsAdmin() : boolean{
+    return this.auth.isLoggedInAsAdmin();
   }
 
   ngOnInit(): void {

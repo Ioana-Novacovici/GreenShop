@@ -1,0 +1,17 @@
+
+.container-fluid{
+  padding-left: 70px;
+  padding-right: 20px;
+}
+
+.list-group-item.active{
+  background-color: forestgreen;
+  border-color: forestgreen;
+  font-size: 2em;
+  height: 50px;
+}
+
+.list-group-item{
+  font-size: 1.3em;
+}
+

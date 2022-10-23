@@ -1,0 +1,46 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-md-3">
+      <div class="list-group">
+        <a class="list-group-item list-group-item-action" (click)="selectButton(1)" [class.active]="isButtonSelected(1)" data-bs-toggle="list" [routerLink]="['/store', 'allCategories']">All Categories</a>
+        <a class="list-group-item list-group-item-action" (click)="selectButton(2)" [class.active]="isButtonSelected(2)" data-bs-toggle="list" [routerLink]="['/store', 'fruits']">Fruits</a>
+        <a class="list-group-item list-group-item-action" (click)="selectButton(3)" [class.active]="isButtonSelected(3)" data-bs-toggle="list" [routerLink]="['/store', 'vegetables']">Vegetables</a>
+        <a class="list-group-item list-group-item-action" (click)="selectButton(4)" [class.active]="isButtonSelected(4)" data-bs-toggle="list" [routerLink]="['/store', 'juices']">Juices</a>
+        <a class="list-group-item list-group-item-action" (click)="selectButton(5)" [class.active]="isButtonSelected(5)" data-bs-toggle="list" [routerLink]="['/store', 'salads']">Salads</a>
+        <a class="list-group-item list-group-item-action" (click)="selectButton(6)" [class.active]="isButtonSelected(6)" data-bs-toggle="list" [routerLink]="['/store', 'deserts']">Deserts</a>
+      </div>
+    </div>
+
+    <div class="col-md-1"></div>
+
+    <div class="col-md-8">
+      <div *ngFor="let item of itemsList">
+        <div  *ngIf="isButtonSelected(1)">
+          <app-item-card [item]="item"></app-item-card>
+        </div>
+        <div *ngIf="isButtonSelected(2) && item.category == 'fruits'">
+          <app-item-card [item]="item"></app-item-card>
+        </div>
+        <div *ngIf="isButtonSelected(3) && item.category == 'vegetables'">
+          <app-item-card [item]="item"></app-item-card>
+        </div>
+        <div *ngIf="isButtonSelected(4) && item.category == 'juices'">
+          <app-item-card [item]="item"></app-item-card>
+        </div>
+        <div *ngIf="isButtonSelected(5) && item.category == 'salads'">
+          <app-item-card [item]="item"></app-item-card>
+        </div>
+        <div *ngIf="isButtonSelected(6) && item.category == 'deserts'">
+          <app-item-card [item]="item"></app-item-card>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="row-cols-1"><h3>Green Store</h3></div>
+  <div class="row-cols-1"><h3>Green Store</h3></div>
+</div>
+
+
+

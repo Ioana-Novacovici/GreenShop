@@ -36,13 +36,13 @@
   opacity: 0.8;
 }
 
-#dropdownBasic2, #dropdownBasic1{
+#dropdownBasic2, #dropdownBasic1, #dropdownBasic3{
   color: white;
   border-color: white;
 
 }
 
-#dropdownBasic2:hover, #dropdownBasic1:hover{
+#dropdownBasic2:hover, #dropdownBasic1:hover, #dropdownBasic3:hover{
   background-color: forestgreen;
   border-color: white;
   --bs-btn-focus-shadow: white;
@@ -65,6 +65,10 @@
 
 dropdownBasic2:focus{
   border-color: black;
+}
+
+mat-icon{
+  margin:7px;
 }
 
 
