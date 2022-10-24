@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Item} from "../model/item";
+import {Order} from "../model/order";
+import {AngularFirestore} from "@angular/fire/compat/firestore";
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +24,7 @@ export class CartService {
   private _totalPrice : number = 0;
   private _cartItemsNumber : number = 0;
 
-  constructor() { }
+  constructor(private afs: AngularFirestore) { }
 
 
 
@@ -50,6 +52,25 @@ export class CartService {
     this._totalPrice -= this._cartItemList[index].price * this._cartItemList[index].quantity;
     this._cartItemList.splice(index, 1);
     console.log(this.cartItemList);
+  }
+
+  addOrder(order : Order){
+    order.id = this.afs.createId();
+    return this.afs.collection('/Orders').add(order);
+  }
+
+  deleteItem(order : Order){
+    return this.afs.doc('/Order/'+order.id).delete();
+  }
+
+  getAllOrders(){
+    return this.afs.collection('/Order').snapshotChanges();
+  }
+
+  clearCart(){
+    this._cartItemList = [];
+    this._totalPrice = 0;
+    this._cartItemsNumber = 0;
   }
 
 }

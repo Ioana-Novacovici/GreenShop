@@ -27,9 +27,4 @@ export class ItemService {
     this.addItem(item);
   }
 
-  updateQuantity(item: Item, quantity: number){
-    this.deleteItem(item);
-    item.quantity = quantity;
-    this.addItem(item);
-  }
 }
