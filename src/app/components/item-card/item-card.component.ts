@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Item} from "../../model/item";
+import {CartService} from "../../services/cart.service";
 
 @Component({
   selector: 'app-item-card',
@@ -17,20 +18,18 @@ export class ItemCardComponent implements OnInit {
     quantity: 0,
     image: ''
   };
-  isClicked : boolean;
-  quantitySelected : number;
 
-  constructor(){
-    this.isClicked = false;
-    this.quantitySelected = 1;
+  constructor(private cartService: CartService){
+  }
+
+  addToCart(item : Item){
+    this.cartService.addToCart(item);
+
+
   }
 
   ngOnInit(): void {
   }
 
-  isZero() : boolean{
-    console.log(this.quantitySelected);
-    return this.quantitySelected==0;
-  }
 
 }
