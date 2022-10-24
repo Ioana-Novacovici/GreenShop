@@ -25,7 +25,6 @@ export class ItemCardComponent implements OnInit {
   addToCart(item : Item){
     this.cartService.addToCart(item);
 
-
   }
 
   ngOnInit(): void {

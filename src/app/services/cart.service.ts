@@ -30,19 +30,18 @@ export class CartService {
     this._totalPrice += item.price;
     this._cartItemsNumber ++;
     if(this._cartItemList.find((currentItem) => {return currentItem.name == item.name}) == undefined ){
+      item.quantity ++;
       this._cartItemList.push(item);
       return;
     }
 
-    this._cartItemList.forEach(curentItem =>{
-      if(curentItem.name == item.name){
-        curentItem.quantity ++;
+    this._cartItemList.forEach(currentItem =>{
+      if(currentItem.name == item.name){
+        currentItem.quantity ++;
         return;
+
       }
     })
-    console.log(this._totalPrice);
-    console.log(this._cartItemList);
-    console.log(this._cartItemsNumber);
   }
 
   removeFromCart(item : Item){
@@ -50,6 +49,7 @@ export class CartService {
     this._cartItemsNumber -= this._cartItemList[index].quantity;
     this._totalPrice -= this._cartItemList[index].price * this._cartItemList[index].quantity;
     this._cartItemList.splice(index, 1);
+    console.log(this.cartItemList);
   }
 
 }

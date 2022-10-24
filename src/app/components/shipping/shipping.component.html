@@ -26,7 +26,7 @@
           <input type="text" placeholder="0936789155" class="form-control" id="phone" name="phone">
         </div>
 
-        <button type="button" class="btn btn-success">Place order</button>
+        <button [disabled]="cartItemsNumber==0" type="button" class="btn btn-success">Place order</button>
 
       </div>
 
@@ -42,31 +42,41 @@
             <tr>
               <th scope="col">Quantity</th>
               <th scope="col">Name</th>
-              <th scope="col">Price</th>
+              <th scope="col">Price/Item</th>
               <th scope="col">Category</th>
               <th scope="col">Action</th>
             </tr>
             </thead>
             <tbody>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <button class="btn btn-outline-danger">Remove from cart</button>
-              </td>
-            </tr>
+            <h2 *ngIf="isCartEmpty(); else cartView">Your shopping cart is empty</h2>
+            <ng-template #cartView>
+              <tr *ngFor="let cartItem of cartItemList">
+                <td>{{cartItem.quantity}}</td>
+                <td>{{cartItem.name}}</td>
+                <td>{{cartItem.price}}</td>
+                <td>{{cartItem.category}}</td>
+                <td>
+                  <button class="btn btn-outline-danger" (click)="removeFromCart(cartItem)">Remove from cart</button>
+                </td>
+              </tr>
+
+            </ng-template>
             </tbody>
           </table>
         </div>
+        <div class="row" id="total" *ngIf="!isCartEmpty()">
+          <div class="col-md-6"><h2>Total number of items: {{cartItemsNumber}}</h2></div>
+          <div class="col-md-6"><h2>Total Price: {{totalPrice | currency}}</h2></div>
+        </div>
+
       </div>
     </div>
 
 
   </div>
-<!--  <div class="row-cols-1"><h3>Green Store</h3></div>-->
-<!--  <div class="row-cols-1"><h3>Green Store</h3></div>-->
+
+  <div class="row-cols-1"><h3>Green Store</h3></div>
+  <div class="row-cols-1"><h3>Green Store</h3></div>
 
 </div>
 
