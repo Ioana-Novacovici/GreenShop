@@ -6,6 +6,7 @@
   />
 
   <span>Green Shop</span>
+  <a routerLink="/store"> <mat-icon>home</mat-icon></a>
   <div class="spacer">
   </div>
   <i class="bi bi-person"></i>
@@ -44,7 +45,7 @@
 
     <ng-template #elseBlock2>
       <div class="col-sm-1">
-        <mat-icon [matBadge] = "getCartItems()" [matBadgeHidden] = "hideBadge" >shopping_cart</mat-icon>
+        <mat-icon [matBadge] = "getCartItems()" [matBadgeHidden] = "hideBadge" matBadgeColor="accent">shopping_cart</mat-icon>
       </div>
       <div class="col">
         <div ngbDropdown class="d-inline-block">

@@ -71,4 +71,12 @@ mat-icon{
   margin:7px;
 }
 
+a:link, a:visited {
+  color: white;
+}
+
+a:link:active, a:visited:active, a:hover {
+  color : darkseagreen;
+}
+
 
