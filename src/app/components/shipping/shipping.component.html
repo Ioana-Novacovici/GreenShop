@@ -41,6 +41,7 @@
             <thead>
             <tr>
               <th scope="col">Quantity</th>
+              <th scope="col">Image</th>
               <th scope="col">Name</th>
               <th scope="col">Price/Item</th>
               <th scope="col">Category</th>
@@ -52,6 +53,7 @@
             <ng-template #cartView>
               <tr *ngFor="let cartItem of cartItemList">
                 <td>{{cartItem.quantity}}</td>
+                <td><img [src] = "cartItem.image" alt="Item image"></td>
                 <td>{{cartItem.name}}</td>
                 <td>{{cartItem.price}}</td>
                 <td>{{cartItem.category}}</td>
