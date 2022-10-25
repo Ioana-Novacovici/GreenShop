@@ -1,0 +1,22 @@
+.row{
+  margin: 50px;
+}
+
+h2{
+  color:forestgreen;
+}
+
+label{
+  margin-bottom: 8px;
+}
+
+#total{
+  margin:20px;
+  text-align: center;
+}
+
+img{
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}

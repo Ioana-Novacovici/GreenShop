@@ -24,6 +24,8 @@ import { ShopViewComponent } from './components/shop-view/shop-view.component';
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {MatTableModule} from "@angular/material/table";
 import { UsersListComponent } from './components/users-list/users-list.component';
+import { ShippingComponent } from './components/shipping/shipping.component';
+import { OrdersListComponent } from './components/orders-list/orders-list.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,9 @@ import { UsersListComponent } from './components/users-list/users-list.component
     ItemCardComponent,
     AdminLoginComponent,
     ShopViewComponent,
-    UsersListComponent
+    UsersListComponent,
+    ShippingComponent,
+    OrdersListComponent
   ],
   imports: [
     BrowserModule,

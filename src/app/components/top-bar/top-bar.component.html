@@ -6,6 +6,7 @@
   />
 
   <span>Green Shop</span>
+  <a routerLink="/store"> <mat-icon>home</mat-icon></a>
   <div class="spacer">
   </div>
   <i class="bi bi-person"></i>
@@ -34,23 +35,23 @@
     <div class="col"  *ngIf="isLoggedInAsAdmin(); else elseBlock2">
       <div ngbDropdown class="d-inline-block">
         <button type="button" class="btn btn-outline-secondary" id="dropdownBasic3" ngbDropdownToggle>Admin Panel</button>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic3">
           <button ngbDropdownItem routerLink="/usersView">View Users</button>
           <button ngbDropdownItem routerLink="/shopView">Manage Shop</button>
-          <button ngbDropdownItem>Manage Orders</button>
+          <button ngbDropdownItem routerLink="/ordersView">Manage Orders</button>
         </div>
       </div>
     </div>
 
     <ng-template #elseBlock2>
       <div class="col-sm-1">
-        <mat-icon matBadge="5">shopping_cart</mat-icon>
+        <mat-icon [matBadge] = "getCartItems()" [matBadgeHidden] = "hideBadge">shopping_cart</mat-icon>
       </div>
       <div class="col">
         <div ngbDropdown class="d-inline-block">
           <button type="button" class="btn btn-outline-secondary" id="dropdownBasic2" ngbDropdownToggle>Shopping Cart</button>
           <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
-            <button ngbDropdownItem>View Shopping Cart</button>
+            <button ngbDropdownItem routerLink="/shipping">View Shopping Cart</button>
           </div>
         </div>
       </div>

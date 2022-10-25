@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../../services/auth.service";
+import {CartService} from "../../services/cart.service";
 
 @Component({
   selector: 'app-top-bar',
@@ -8,7 +9,13 @@ import {AuthService} from "../../services/auth.service";
 })
 export class TopBarComponent implements OnInit {
 
-  constructor(private auth:AuthService) {
+  hideBadge : boolean = true;
+  constructor(private auth:AuthService, private cartService : CartService) {
+  }
+
+  getCartItems(){
+    this.hideBadge = this.cartService.cartItemsNumber == 0;
+    return this.cartService.cartItemsNumber;
   }
 
   logout(){
