@@ -59,12 +59,12 @@ export class CartService {
     return this.afs.collection('/Orders').add(order);
   }
 
-  deleteItem(order : Order){
-    return this.afs.doc('/Order/'+order.id).delete();
+  deleteOrder(order : Order){
+    return this.afs.doc('/Orders/'+order.id).delete();
   }
 
   getAllOrders(){
-    return this.afs.collection('/Order').snapshotChanges();
+    return this.afs.collection('/Orders').snapshotChanges();
   }
 
   clearCart(){
